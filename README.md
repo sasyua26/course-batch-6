@@ -1,4 +1,5 @@
-# course
+# Course
+Homework for Building RESTful API & Deployment with Docker Golang Batch 6
 
 ## Package
 - Database
@@ -9,15 +10,18 @@
 ## Dependencies
 - mysql
 - golang
+- docker
 
 ## API Documentation
 can check this ![documentation](./openapi.json) using [swagger](https://editor.swagger.io/) 
 
 ## API
 - create register user
-- create user login
-- get exercise question
-- calculate answer
+- create exercise
+- display exercise question
+- calculate score
+- create question
+- create answer
 
 ## DB Schema
 ![db schema](./db_diagram.png)
