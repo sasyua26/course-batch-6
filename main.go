@@ -5,7 +5,8 @@ import (
 	"exercise/internal/app/exercise/handler"
 	userHandler "exercise/internal/app/user/handler"
 	"exercise/internal/pkg/middleware"
-	"net/http"
+	"fmt"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,11 +14,6 @@ import (
 // Main function
 func main() {
 	r := gin.Default()
-	r.GET("/hello", func(c *gin.Context) {
-		c.JSON(http.StatusOK, map[string]string{
-			"message": "Hello world",
-		})
-	})
 
 	// Define db connection
 	db := database.NewConnDatabase()
@@ -35,5 +31,8 @@ func main() {
 	r.POST("/register", userHandler.Register)
 
 	// Define localhost port
-	r.Run(":1234")
+	port := os.Getenv("PORT")
+	runWithPort := fmt.Sprintf("0.0.0.0:%s", port)
+	r.Run(runWithPort)
+	//r.Run("1234")
 }
