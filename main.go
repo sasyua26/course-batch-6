@@ -31,6 +31,7 @@ func main() {
 	r.POST("/register", userHandler.Register)
 
 	// Define localhost port
+	var port string
 	if os.Getenv("PORT") != "" {
 		port = os.Getenv("PORT")
 	} else {
