@@ -31,7 +31,11 @@ func main() {
 	r.POST("/register", userHandler.Register)
 
 	// Define localhost port
-	port := os.Getenv("PORT")
+	if os.Getenv("PORT") != "" {
+		port = os.Getenv("PORT")
+	} else {
+		port = "1234"
+	}
 	runWithPort := fmt.Sprintf("0.0.0.0:%s", port)
 	r.Run(runWithPort)
 	//r.Run("1234")
