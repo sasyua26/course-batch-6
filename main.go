@@ -36,7 +36,7 @@ func main() {
 	} else {
 		port = "1234"
 	}
-	runWithPort := fmt.Sprintf("0.0.0.0:%s", port)
+	runWithPort := fmt.Sprintf(":%s", port)
 	r.Run(runWithPort)
 	//r.Run("1234")
 }
