@@ -20,15 +20,15 @@ func NewConnDatabase() *gorm.DB {
 		}
 	}
 
-	//dsn := "sql6580832:zwTxNEJj5r@tcp(sql6.freesqldatabase.com:3306)/sql6580832?charset=utf8mb4&parseTime=True&loc=Local"
-	dsn := fmt.Sprintf(
+	dsn := "sql6580832:zwTxNEJj5r@tcp(sql6.freesqldatabase.com:3306)/sql6580832?charset=utf8mb4&parseTime=True&loc=Local"
+	/* dsn := fmt.Sprintf(
 		"%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		os.Getenv("USER"),
 		os.Getenv("PASSWORD"),
 		os.Getenv("HOST"),
 		os.Getenv("DB_PORT"),
 		os.Getenv("DATABASE"),
-	)
+	) */
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
